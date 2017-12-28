@@ -11,3 +11,7 @@ I am thinking in the lines of simplifying a language. Like babel
 OR
 
 Simplifying React? as it is very very very complicated.
+
+#Use of this program
+
+This is a framework for swift to be used as a dynamic web development tool.
