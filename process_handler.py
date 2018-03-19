@@ -2,13 +2,13 @@ from comm import Commands
 c = Commands()
 # from commands import *
 
-class Process_handler() :
-	# later make a json file to have a list of all the commands instead of hardcoding them.
-	commands = {"": c.default, 
-				"print": c.prin, 
-				"info": c.info, 
-				"configure": c.configure, 
-				"quit": c.quit} # "" stands for 'Default.'
+class Process_handler:
+	proc = {"": c.default, "print": c.prin, "quit": c.quit, "info": c.info, "configure": c.configure}
 
-	def execute(string):
-		return commands[string]()
+	def execute(self, string):
+		for key in self.proc:
+			if (string == key):
+				return self.proc[string]()
+
+		print string, "is not a command!"
+		return True

@@ -1,3 +1,11 @@
 # Feral. Date Created: 23rd September 2017
 
-Learning to make a kernel/shell. In the future make .json support to store all the names of the functions(since they work well with dictionaries). 
+Learning to make a kernel/shell.
+
+A kernel for python by python of python.
+
+#Updates/ TO-DO:
+1. Make it more dynamic
+2. Options for every command
+3. JSON file support for all commands.
+4. Complete support for python.
