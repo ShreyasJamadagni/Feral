@@ -10,34 +10,35 @@ class Process_handler:
 			"configure": c.configure}
 
 	def execute(self, phrase):
-		command = ""
-		option = ""
 		i = 0
-		buff = []
-		for c in phrase:
-			buff.append(c)
+		options = []
+		option = ""
+		command = ""
+		while (i < len(phrase)):
+			# command detection loop
+			if phrase[i] != " ":
+				command = command + phrase[i]
 
-		for j in buff:
-			if (j != " "):
-				command = command + j
-
-			elif (j == " "):
+			# option detection loop
+			elif phrase[i] == " ":
 				k = i + 1
-				while (k<len(buff)): #Find how to get the length of a list.
-					option = option + buff[k]
+				while (k<len(phrase)):
+					if phrase[k] != " ":
+						option = option + phrase[k]
+					if phrase[k] == " " or k == len(phrase) - 1:
+						options.append(option)
+						option = ""
+
 					k = k + 1
-				
 				break
 
 			i = i + 1
 
-		print 
-		if (option == ""):
-			option = "null"
-
+		print options
 		for key in self.proc:
 			if (command == key):
-				return self.proc[command](option)
+				return self.proc[command](options)
 
-		print command, "is not a command!"
+		print command, "is not a command!" # if command is not valid
+
 		return True
