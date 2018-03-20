@@ -1,23 +1,29 @@
 class Commands:
-	def default(self):
-		print "default_process"
+	def default(self, option):
+		print "default_process with option", option
 		return True
 
 	# calling it 'prin' as 'print' messes with python
-	def prin(self):
-		print "print_process"
+	def prin(self, option):
+		phrase = raw_input("print: ")
+		
+		if option == "-l":
+			print phrase.lower()
+		elif option == "-C":
+			print phrase.upper()
+
 		return True
 
-	def quit(self):
-		print "quit_process"
+	def quit(self, option):
+		print "quit_process with option", option
 		return False
 
-	def configure(self):
-		print "configure_process"
+	def configure(self, option):
+		print "configure_process with option", option
 		return True
 
-	def info(self):
-		print "info_process"
+	def info(self, option):
+		print "info_process with option", option
 		return True 
 
 	# d = dict([(fname, f) for fname, f in globals().items() if callable(f)]); dictionary of all functions
