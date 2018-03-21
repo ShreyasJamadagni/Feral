@@ -3,12 +3,6 @@ c = Commands()
 # from commands import *
 
 class Process_handler:
-	proc = {"": c.default, 
-			"print": c.prin, 
-			"quit": c.quit, 
-			"info": c.info, 
-			"configure": c.configure}
-
 	def execute(self, phrase):
 		i = 0
 		options = []
@@ -34,11 +28,11 @@ class Process_handler:
 
 			i = i + 1
 
-		print options
-		for key in self.proc:
+		if command == "":
+			command = "default"
+		for key in c.local:
 			if (command == key):
-				return self.proc[command](options)
+				return c.local[command](options)
 
 		print command, "is not a command!" # if command is not valid
-
 		return True

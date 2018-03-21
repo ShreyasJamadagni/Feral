@@ -1,28 +1,26 @@
 class Commands:
-	def default(self, options):
-		print "default_process with option", options
+	local = locals()
+	def default(options):
 		return True
 
 	# calling it 'prin' as 'print' messes with python
-	def prin(self, options):
-		for option in options:
-			if option == "-l":
-				print raw_input("print: ").lower()
-			elif option == "-C":
-				print raw_input("print: ").upper() 
+	def output(options):
+		string = raw_input("output: ")
+
+# It shouldn't request for a string if the option is invalid.
 
 		return True
 
-	def quit(self, options):
-		print "quit_process with option", options
+	def quit(options):
 		return False
 
-	def configure(self, options):
+	def configure(options):
 		print "configure_process with option", options
 		return True
 
-	def info(self, options):
-		print "info_process with option", options
+	def info(options):
+		print "Version 0.0.1"
+		print "Valid commands are: configure , info , print , quit ."
 		return True 
 
 	# d = dict([(fname, f) for fname, f in globals().items() if callable(f)]); dictionary of all functions
