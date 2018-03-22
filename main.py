@@ -5,9 +5,9 @@ def main():
 	running = True
 
 	while(running):
-		running = handler.execute(raw_input("shell-> "))
-		print ""
+		running = handler.execute(input("shell-> "))
+		print("")
 
-	print "Process Complete!"
+	print("[Process Complete]")
 
 main()

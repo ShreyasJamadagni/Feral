@@ -3,6 +3,7 @@ c = Commands()
 # from commands import *
 
 class Process_handler:
+
 	def execute(self, phrase):
 		i = 0
 		options = []
@@ -16,10 +17,10 @@ class Process_handler:
 			# option detection loop
 			elif phrase[i] == " ":
 				k = i + 1
-				while (k<len(phrase)):
+				while (k < len(phrase)):
 					if phrase[k] != " ":
 						option = option + phrase[k]
-					if phrase[k] == " " or k == len(phrase) - 1:
+					if phrase[k] == " " and option != "" or k == len(phrase) - 1:
 						options.append(option)
 						option = ""
 
@@ -34,5 +35,18 @@ class Process_handler:
 			if (command == key):
 				return c.local[command](options)
 
-		print command, "is not a command!" # if command is not valid
+		print (command, "is not a command!") # if command is not valid
 		return True
+
+# def inheritors(klass):
+#     subclasses = set()
+#     work = [klass]
+#     while work:
+#         parent = work.pop()
+#         for child in parent.__subclasses__():
+#             if child not in subclasses:
+#                 subclasses.add(child)
+#                 work.append(child)
+#     return subclasses
+
+# print(inheritors(Commands))
