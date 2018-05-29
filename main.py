@@ -1,13 +1,15 @@
 from process_handler import Process_handler
 handler = Process_handler()
 
+
 def main():
-	running = True
+    running = True
 
-	while(running):
-		running = handler.execute(input("shell-> "))
-		print("")
+    while(running):
+        running = handler.execute(input("shell-> "))
+        print("")
 
-	print("[Process Complete]")
+    print("[Process Complete]")
+
 
 main()

@@ -1,7 +1,10 @@
 from comm import Commands
 
 class Output(Commands):
+	validOptions = ["-l", "-C", "-help"]
+
 	def execute(options):
+		# option validation loop
 		for option in options:
 			if option != "-l" and option != "-C" and option != "-help":
 				print option, "is not a valid command!"
