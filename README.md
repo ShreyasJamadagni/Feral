@@ -4,11 +4,13 @@ Learning to make a kernel/shell.
 
 A kernel for python by python of python.
 
+#Instructions
+After downloadiing all the files, run main.py.
+
 #Updates/ TO-DO:
 1. Elegancy is #1 priority.
 2. Make each command a seperate file but still part of Commands (?)
-3. Options for every command
-4. Complete support for python.
+3. Complete support for python.
 
 #Procedural Reports.
 Detection of options are coming out great by detecting an option after every space.

@@ -11,6 +11,7 @@ class Process_handler:
         option = ""
         command = ""
 
+        # command-option detection loop
         while (i < len(phrase)):
             # command detection
             if phrase[i] != " ":
